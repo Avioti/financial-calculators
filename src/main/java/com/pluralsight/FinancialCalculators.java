@@ -1,10 +1,11 @@
 package com.pluralsight;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class FinancialCalculators {
     public static void main(String[] args) {
-mortgageCalc();
+futureValueCalc();
     }
 
     public static void mortgageCalc(){
@@ -38,7 +39,18 @@ mortgageCalc();
     }
 
     public static void futureValueCalc(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter deposit amount: ");
+        double Initial_deposit = scanner.nextDouble();
+        System.out.println("What is the interest rate: ");
+        double Interest_rate = scanner.nextDouble();
+        double Annual_interest = Interest_rate / 100;
+        System.out.println("How many years will this deposit gain interest: ");
+        double Owned_length = scanner.nextDouble();
 
+        double Future_value = Initial_deposit * Math.pow(1 + (Annual_interest / 365), (365 * Owned_length));
+        double Total_interest = Future_value - Initial_deposit;
+        System.out.printf("The future value of this cd is %.2f" + " and the Total interest paid is %.2f", Future_value , Total_interest);
     }
 
     public static void presentValueCalc(){
