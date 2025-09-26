@@ -28,6 +28,8 @@ calcChoice();
     }
     else if (calcChoice.equalsIgnoreCase("PresentValue") || calcChoice.equalsIgnoreCase("Pv") || calcChoice.equalsIgnoreCase("3")){
         presentValueCalc();
+    } else {
+        System.out.println("System Error!!!, PLEASE PICK ONE OF THE AVAILABLE OPTIONS");
     }
 }
 
@@ -37,7 +39,10 @@ calcChoice();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("What is the Total amount of the loan: ");
+
+
         double Principal = scanner.nextDouble();
+
 
         System.out.println("What is the Interest Rate: ");
         double Interest_rate = scanner.nextDouble();
@@ -60,7 +65,6 @@ calcChoice();
         double Monthly_payment = Principal * (Monthly_Interest * Math.pow(1 + Monthly_Interest, Loan_length)) / (Math.pow(1 + Monthly_Interest, Loan_length) - 1);
         double Total_interest = (Monthly_payment * Loan_length) - Principal;
         System.out.printf("Your monthly payment is: %.2f " + " With a total interest paid of %.2f " ,Monthly_payment , Total_interest);
-
 
 
 
@@ -92,6 +96,7 @@ calcChoice();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("What is the monthly payout?");
+
         double Monthly_payout = scanner.nextDouble();
 
         System.out.println("What is the expected interest rate?");
@@ -111,4 +116,6 @@ calcChoice();
     public static double interestConversion(double x){
         return x / 100;
     }
+
+
 }
