@@ -29,7 +29,7 @@ calcChoice();
     else if (calcChoice.equalsIgnoreCase("PresentValue") || calcChoice.equalsIgnoreCase("Pv") || calcChoice.equalsIgnoreCase("3")){
         presentValueCalc();
     } else {
-        System.out.println("System Error!!!, PLEASE PICK ONE OF THE AVAILABLE OPTIONS");
+        System.out.println("System Error!!!, RUN AGAIN TO PICK ONE OF THE AVAILABLE OPTIONS");
     }
 }
 
