@@ -5,9 +5,19 @@ import java.util.Scanner;
 
 public class FinancialCalculators {
     public static void main(String[] args) {
-futureValueCalc();
+calcChoice();
     }
-
+public static void calcChoice(){
+        Scanner scanner = new Scanner(System.in);
+    System.out.println("Which calculator will you like today?");
+    System.out.println("Mortage(M/1), FutureValue(Fv/2)");
+    String calcChoice = scanner.next();
+    if (calcChoice.equalsIgnoreCase("Mortgage") || calcChoice.equalsIgnoreCase("M") || calcChoice.equalsIgnoreCase("1")){
+        mortgageCalc();
+    } else if (calcChoice.equalsIgnoreCase("FutureValue") || calcChoice.equalsIgnoreCase("Fv") || calcChoice.equalsIgnoreCase("2")){
+        futureValueCalc();
+    }
+}
     public static void mortgageCalc(){
 
         Scanner scanner = new Scanner(System.in);
